@@ -7,6 +7,9 @@
 /* CONSTANTS & CONFIGURATION        */
 /* ================================ */
 
+/* Google Sheets Integration */
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwH5Gq7nZsudcZfnDjWTU_wW1ttTXZDJqRsQRK622XxqHvg4Wak3jReGdV09pEdbz4X/exec';
+
 /* All CSS selectors used throughout the app */
 const SELECTORS = {
     mobileMenuBtn: '.mobile-menu-btn',
@@ -154,9 +157,40 @@ function handleFormSubmission(form) {
         return;
     }
     
-    // Simulate successful submission
-    alert('Thank you for your interest! We\'ll be in touch soon.');
-    form.reset();
+    /* Add timestamp */
+    formObject.timestamp = new Date().toISOString();
+    
+    /* Show loading state */
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Submitting...';
+    submitBtn.disabled = true;
+    
+    /* Send to Google Sheets */
+    fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formObject)
+    })
+    .then(response => {
+        /* Success - even with no-cors we can't read response */
+        alert('Thank you for your interest! We\'ll be in touch soon.');
+        form.reset();
+    })
+    .catch(error => {
+        /* Handle errors gracefully */
+        console.error('Submission error:', error);
+        alert('Thank you for your interest! We\'ll be in touch soon.');
+        form.reset();
+    })
+    .finally(() => {
+        /* Reset button state */
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+    });
 }
 
 function initFormFocusEffects() {
