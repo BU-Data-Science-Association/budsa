@@ -434,13 +434,27 @@ body::after {
     align-items: flex-start;
 }
 
+.main-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.social-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
 /* Social Media Buttons */
 .social-btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50px;
-    height: 50px;
+    width: 65px;
+    height: 65px;
     border-radius: 50%;
     text-decoration: none;
     font-size: 1.5rem;
@@ -456,8 +470,8 @@ body::after {
 }
 
 .social-icon {
-    width: 24px;
-    height: 24px;
+    width: 32px;
+    height: 32px;
     object-fit: contain;
     transition: transform 0.3s ease;
 }
@@ -1255,6 +1269,18 @@ body::after {
 
     .hero-buttons {
         justify-content: center;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .main-buttons {
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    .social-buttons {
+        justify-content: center;
+        gap: 1rem;
     }
 
     .about h2,
