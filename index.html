@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BU Data Science Association</title>
+    <meta name="description" content="Join Boston University's Data Science Association - a vibrant community for students passionate about data science, machine learning, and analytics.">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/budsa_logo-modified.png">
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Fixed Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Logo & Brand -->
+            <a href="#home" class="logo">
+                <img src="assets/budsa_logo-modified.png" alt="BU-DSA Logo" class="logo-image">
+                <span class="logo-text">BU-DSA</span>
+            </a>
+            <!-- Navigation Links -->
+            <ul class="nav-menu">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#events" class="nav-link">Events</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#team" class="nav-link">Team</a></li>
+                <li><a href="#join" class="join-btn">Join</a></li>
+            </ul>
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <!-- Main Title & Logo -->
+                <div class="hero-header">
+                    <div class="hero-text">
+                        <h1>Boston University Data Science Association</h1>
+                    </div>
+                    <div class="hero-logo">
+                        <img src="assets/budsa_logo-modified.png" alt="BU Data Science Association Logo" class="hero-logo-image">
+                    </div>
+                </div>
+                <!-- Description -->
+                <p>Join Boston University's Data Science Association, a vibrant community of students passionate about data science, software engineering,machine learning, and analytics. We host interactive workshops, collaborative projects, and networking events to help you build technical skills, land that tech job, and connect with peers who share your interest in data-driven problem solving.</p>
+                <!-- Action Buttons & Social Links -->
+                <div class="hero-buttons">
+                    <a href="#join" class="btn-primary">Become a Member</a>
+                    <a href="#events" class="btn-secondary">See Upcoming Events</a>
+                    
+                    <!-- Social Media Icons -->
+                    <a href="#" class="social-btn slack" aria-label="Join our Slack">
+                        <img src="assets/Slack_icon_2019.svg.png" alt="Slack" class="social-icon">
+                    </a>
+                    <a href="#" class="social-btn instagram" aria-label="Follow on Instagram">
+                        <img src="assets/Instagram_icon.png" alt="Instagram" class="social-icon">
+                    </a>
+                    <a href="#" class="social-btn linkedin" aria-label="Connect on LinkedIn">
+                        <img src="assets/LinkedIn_icon.svg.png" alt="LinkedIn" class="social-icon">
+                    </a>
+                    <a href="#" class="social-btn github" aria-label="View our GitHub">
+                        <img src="assets/github-icon-2.svg" alt="GitHub" class="social-icon">
+                    </a>
+                </div>
+            </div>
+            <!-- Upcoming Events Sidebar -->
+            <div class="upcoming-meetings">
+                <h3>Upcoming Meetings</h3>
+                <div class="event-item">
+                    <div class="event-category">meeting name</div>
+                    <div class="event-title">event title</div>
+                    <div class="event-date">Month Day, Year • Time</div>
+                </div>
+                <div class="event-item">
+                    <div class="event-category">meeting name</div>
+                    <div class="event-title">event title</div>
+                    <div class="event-date">Month Day, Year • Time</div>
+                </div>
+                <div class="event-item">
+                    <div class="event-category">meeting name</div>
+                    <div class="event-title">event title</div>
+                    <div class="event-date">Month Day, Year • Time</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <h2>About Us</h2>
+        <p class="about-description">We're an inclusive community where students of all skill levels come together to explore technology, build amazing projects, and grow both personally and professionally. Whether you're just starting your coding journey or looking to expand your expertise, there's a place for you here.</p>
+        
+        <!-- Feature Cards -->
+        <div class="about-cards">
+            <div class="about-card">
+                <div class="about-card-icon">🛠️</div>
+                <h3>Workshops and Projects</h3>
+                <p>Hands-on sessions covering programming languages, web development, data science, and the latest technologies. Learn from experienced peers, collaborate on real-world applications. Build your portfolio while working with talented teammates..</p>
+            </div>
+            <div class="about-card">
+                <div class="about-card-icon">🚀</div>
+                <h3>Industry Connections</h3>
+                <p>Join industry professionals for talks, workshops, and networking events. Get insights into the latest trends in the tech industry and build your professional network.</p>
+            </div>
+            <div class="about-card">
+                <div class="about-card-icon">🤝</div>
+                <h3>Community Building</h3>
+                <p>Join study groups, find mentors, get resume feedback, and connect with students who share your passion for technology and innovation.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section class="events" id="events">
+        <h2>Semester Events</h2>
+        
+        <!-- Filter Buttons -->
+        <div class="event-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="workshops">Workshops</button>
+            <button class="filter-btn" data-filter="socialandindustry">Social + Industry</button>
+            <button class="filter-btn" data-filter="hackathons">Hackathons</button>
+        </div>
+
+        <!-- Event Cards Grid -->
+        <div class="events-grid">
+            <div class="event-card" data-category="workshops">
+                <h3>Intro to SQL</h3>
+                <div class="event-meta">Month Day, Year • Time • Location</div>
+                <p class="event-description">Perfect for beginners! Learn SQL fundamentals through interactive coding exercises and real-world examples.</p>
+            </div>
+            
+            <div class="event-card" data-category="socialandindustry">
+                <h3>End of Semester Social</h3>
+                <div class="event-meta">Month Day, Year • Time • Location</div>
+                <p class="event-description">Come hang out with us and get to know your fellow DSA members! Pizza and Canes will be provided.</p>
+            </div>
+
+            <div class="event-card" data-category="hackathons">
+                <h3>XXXX Datathon</h3>
+                <div class="event-meta">Month Day, Year • Time • Location</div>
+                <p class="event-description">A datathon is a competitive, hackathon-style event where participants collaboratively analyze large datasets to uncover insights, build models, and solve real-world problems within a limited time.</p>
+            </div>
+            
+            <div class="event-card" data-category="socialandindustry">
+                <h3>Data Analytics at Liberty Mutual</h3>
+                <div class="event-meta">Month Day, Year • Time • Location</div>
+                <p class="event-description">Join John Smith from Liberty Mutual's data analytics team, where you'll learn about their work and get insights into the latest trends in data analytics.</p>
+            </div>
+            
+            <div class="event-card" data-category="workshops">
+                <h3>Git & GitHub Workshop</h3>
+                <div class="event-meta">Month Day, Year • Time • Location</div>
+                <p class="event-description">Master version control with Git and learn collaborative development workflows using GitHub.</p>
+            </div>
+            
+            <div class="event-card" data-category="hackathons">
+                <h3>SPARK Hackathon</h3>
+                <div class="event-meta">Month Day, Year • Time • Location</div>
+                <p class="event-description">A hackathon is a 24-hour coding competition where participants work in teams to build innovative solutions to real-world problems. It's a great opportunity to showcase your skills and collaborate with others.</p>
+            </div>
+            
+            <div class="event-card" data-category="workshops">
+                <h3>Intro to NLP</h3>
+                <div class="event-meta">Month Day, Year • Time • Location</div>
+                <p class="event-description">Learn about the basics of natural language processing (NLP) and how it can be applied to real-world problems.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <h2>Projects</h2>
+        <p class="projects-description">Take a look at some of our past projects and events</p>
+        
+        <!-- Project Cards -->
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-image">Battle of the Bots</div>
+                <div class="project-content">
+                    <h3>🤖 Battle of the Bots</h3>
+                    <p>We built 2 bots to defend and attack your own arguments</p>
+                    <a href="https://github.com/your-org/battle-of-bots" target="_blank" rel="noopener" class="project-github">Project GitHub</a>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-image">Custom Data Lakes</div>
+                <div class="project-content">
+                    <h3>💾 Custom Data Lakes</h3>
+                    <p>We built a custom data lake for a you to store your own data!!</p>
+                    <a href="https://github.com/your-org/custom-data-lakes" target="_blank" rel="noopener" class="project-github">Project GitHub</a>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-image">Neural Networks from Scratch</div>
+                <div class="project-content">
+                    <h3>🧠 Neural Nets from Scratch</h3>
+                    <p>We built a neural network from scratch to classify images of dogs and cats.</p>
+                    <a href="https://github.com/your-org/neural-networks-scratch" target="_blank" rel="noopener" class="project-github">Project GitHub</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team" id="team">
+        <h2>Meet the Team</h2>
+        
+        <!-- Team Member Cards -->
+        <div class="team-grid">
+            <!-- Top Leadership -->
+            <div class="team-card">
+                <div class="team-avatar">
+                    <img src="assets/default_pfp.svg" alt="Vincent Sun" class="avatar-image">
+                </div>
+                <h3>Vincent Sun</h3>
+                <p class="team-role">President</p>
+                <p class="team-major">Data Science</p>
+                <a href="mailto:vincent@bu.edu" class="team-email">vincent@bu.edu</a>
+                <a href="https://linkedin.com/in/vincentsun" target="_blank" rel="noopener" class="team-linkedin">LinkedIn</a>
+            </div>
+            
+            <!-- Core Leadership Team -->
+            <div class="team-card">
+                <div class="team-avatar">
+                    <img src="assets/default_pfp.svg" alt="Sam Cowan" class="avatar-image">
+                </div>
+                <h3>Sam Cowan</h3>
+                <p class="team-role">Technical Lead</p>
+                <p class="team-major">Data Science</p>
+                <a href="mailto:samcowan@bu.edu" class="team-email">samcowan@bu.edu</a>
+                <a href="https://linkedin.com/in/samcowan" target="_blank" rel="noopener" class="team-linkedin">LinkedIn</a>
+            </div>
+            
+            <div class="team-card">
+                <div class="team-avatar">
+                    <img src="assets/default_pfp.svg" alt="Thomas Shin" class="avatar-image">
+                </div>
+                <h3>Thomas Shin</h3>
+                <p class="team-role">Operations Lead</p>
+                <p class="team-major">Data Science</p>
+                <a href="mailto:thomasshin@bu.edu" class="team-email">thomasshin@bu.edu</a>
+                <a href="https://linkedin.com/in/thomasshin" target="_blank" rel="noopener" class="team-linkedin">LinkedIn</a>
+            </div>
+            
+            <div class="team-card">
+                <div class="team-avatar">
+                    <img src="assets/default_pfp.svg" alt="Jacky Lin" class="avatar-image">
+                </div>
+                <h3>Jacky Lin</h3>
+                <p class="team-role">Director of Community, Technical Staff</p>
+                <p class="team-major">Data Science</p>
+                <a href="mailto:jackylin@bu.edu" class="team-email">jackylin@bu.edu</a>
+                <a href="https://linkedin.com/in/jackylin" target="_blank" rel="noopener" class="team-linkedin">LinkedIn</a>
+            </div>
+            
+            <!-- Executive Officers -->
+            <div class="team-card">
+                <div class="team-avatar">
+                    <img src="assets/default_pfp.svg" alt="Beau Lin" class="avatar-image">
+                </div>
+                <h3>Beau Lin</h3>
+                <p class="team-role">Treasurer</p>
+                <p class="team-major">Data Science</p>
+                <a href="mailto:beaulin@bu.edu" class="team-email">beaulin@bu.edu</a>
+                <a href="https://linkedin.com/in/beaulin" target="_blank" rel="noopener" class="team-linkedin">LinkedIn</a>
+            </div>
+            
+            <div class="team-card">
+                <div class="team-avatar">
+                    <img src="assets/default_pfp.svg" alt="Katherine Wu" class="avatar-image">
+                </div>
+                <h3>Katherine Wu</h3>
+                <p class="team-role">Secretary</p>
+                <p class="team-major">Data Science</p>
+                <a href="mailto:katherinewu@bu.edu" class="team-email">katherinewu@bu.edu</a>
+                <a href="https://linkedin.com/in/katherinewu" target="_blank" rel="noopener" class="team-linkedin">LinkedIn</a>
+            </div>
+            
+            <!-- Department Coordinators -->
+            <div class="team-card">
+                <div class="team-avatar">
+                    <img src="assets/default_pfp.svg" alt="Riwaz Shrestha" class="avatar-image">
+                </div>
+                <h3>Riwaz Shrestha</h3>
+                <p class="team-role">Events Coordinator</p>
+                <p class="team-major">Data Science</p>
+                <a href="mailto:riwazshrestha@bu.edu" class="team-email">riwazshrestha@bu.edu</a>
+                <a href="https://linkedin.com/in/riwazshrestha" target="_blank" rel="noopener" class="team-linkedin">LinkedIn</a>
+            </div>
+            
+            <div class="team-card">
+                <div class="team-avatar">
+                    <img src="assets/default_pfp.svg" alt="Nora Amer" class="avatar-image">
+                </div>
+                <h3>Nora Amer</h3>
+                <p class="team-role">Social Media Manager</p>
+                <p class="team-major">Data Science</p>
+                <a href="mailto:noraamer@bu.edu" class="team-email">noraamer@bu.edu</a>
+                <a href="https://linkedin.com/in/noraamer" target="_blank" rel="noopener" class="team-linkedin">LinkedIn</a>
+            </div>
+            
+            <!-- Technical Staff -->
+            <div class="team-card">
+                <div class="team-avatar">
+                    <img src="assets/default_pfp.svg" alt="Shawn Lau" class="avatar-image">
+                </div>
+                <h3>Shawn Lau</h3>
+                <p class="team-role">Technical Staff</p>
+                <p class="team-major">Data Science</p>
+                <a href="mailto:shawnlau@bu.edu" class="team-email">shawnlau@bu.edu</a>
+                <a href="https://linkedin.com/in/shawnlau" target="_blank" rel="noopener" class="team-linkedin">LinkedIn</a>
+            </div>
+            
+            <div class="team-card">
+                <div class="team-avatar">
+                    <img src="assets/default_pfp.svg" alt="Amanda Eng" class="avatar-image">
+                </div>
+                <h3>Amanda Eng</h3>
+                <p class="team-role">Technical Staff</p>
+                <p class="team-major">Data Science</p>
+                <a href="mailto:amandaeng@bu.edu" class="team-email">amandaeng@bu.edu</a>
+                <a href="https://linkedin.com/in/amandaeng" target="_blank" rel="noopener" class="team-linkedin">LinkedIn</a>
+            </div>
+            
+            <!-- General Team Members -->
+            <div class="team-card">
+                <div class="team-avatar">
+                    <img src="assets/default_pfp.svg" alt="Jay Patel" class="avatar-image">
+                </div>
+                <h3>Jay Patel</h3>
+                <p class="team-role">what was Jay again????</p>
+                <p class="team-major">Data Science</p>
+                <a href="mailto:jaypatel@bu.edu" class="team-email">jaypatel@bu.edu</a>
+                <a href="https://linkedin.com/in/jaypatel" target="_blank" rel="noopener" class="team-linkedin">LinkedIn</a>
+            </div>
+
+            <div class="team-card">
+                <div class="team-avatar">
+                    <img src="assets/default_pfp.svg" alt="Could Be You" class="avatar-image">
+                </div>
+                <h3>Your Name Here</h3>
+                <p class="team-role">Could be YOU 🫵</p>
+                <p class="team-major">Your Major</p>
+                <a href="mailto:yourname@bu.edu" class="team-email">yourname@bu.edu</a>
+                <a href="https://linkedin.com/in/yourname" target="_blank" rel="noopener" class="team-linkedin">LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Section -->
+    <section class="join" id="join">
+        <h2>Join the Club</h2>
+        <p class="join-description">Open to all students of ALL MAJORS. No previous experience required.</p>
+        
+        <!-- Contact Form -->
+        <form class="join-form">
+            <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">University Email</label>
+                <input type="email" id="email" name="email" placeholder="yourbulogin@bu.edu" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="topic">Topic?</label>
+                <select id="topic" name="topic" required>
+                    <option value="">Select one</option>
+                    <option value="questions">Questions</option>
+                    <option value="comments">Comments</option>
+                    <option value="feedback">Feedback</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="goals">Leave a Message</label>
+                <textarea id="goals" name="goals" placeholder="Tell us what you want to learn, comments, feedback, questions, etc."></textarea>
+            </div>
+            
+            <button type="submit" class="btn-primary">Join the Club/Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Back to Top Link -->
+            <a href="#home" class="footer-logo">
+                <span class="back-to-top-arrow">🔝</span>
+                Back to Top
+            </a>
+            <!-- Copyright -->
+            <div class="footer-copyright">© 2025 BU-DSA</div>
+            <!-- Footer Links -->
+            <div class="footer-links">
+                <a href="mailto:dsabu@bu.edu">dsabu@bu.edu</a>
+                <a href="#">GitHub</a>
+                <a href="#">Instagram</a>
+                <a href="#">Slack</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
