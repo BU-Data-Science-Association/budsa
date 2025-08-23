@@ -4,7 +4,7 @@ A modern, interactive single-page website for the Boston University Data Science
 
 ## 🚀 Live Demo
 
-[Add your live website URL here]
+[https://bu-data-science-association.github.io/dsa-website/]
 
 ## ✨ Features
 
