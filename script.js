@@ -20,10 +20,11 @@ const SELECTORS = {
     navLinks: 'a[href^="#"]',
     formInputs: 'input, select, textarea',
     heroLogoImage: '.hero-logo-image',
-    interactiveButtons: '.btn-primary, .btn-secondary, .join-btn, .filter-btn, .social-btn',
+    interactiveButtons: '.btn-primary, .btn-secondary, .join-btn, .filter-btn, .social-btn, .theme-toggle-btn',
     animatableSections: '.about, .events, .projects, .team, .join',
     cards: '.about-card, .event-card, .project-card, .team-card',
-    formGroups: '.form-group'
+    formGroups: '.form-group',
+    themeToggleBtn: '.theme-toggle-btn'
 };
 
 /* Animation timings and settings */
@@ -62,6 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initSmoothScrolling();
     initParallaxEffects();
     initFormFocusEffects();
+    initThemeToggle();
 });
 
 /* ================================ */
@@ -364,4 +366,68 @@ function handleParallaxScroll() {
     }
     
     ticking = false;
+}
+
+/* ================================ */
+/* THEME TOGGLE                     */
+/* ================================ */
+
+function initThemeToggle() {
+    const themeToggleBtn = document.querySelector(SELECTORS.themeToggleBtn);
+    
+    if (themeToggleBtn) {
+        /* Load saved theme or default */
+        loadSavedTheme();
+        
+        /* Add click event listener */
+        themeToggleBtn.addEventListener('click', function() {
+            toggleTheme();
+        });
+    }
+}
+
+function toggleTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'red' ? null : 'red';
+    
+    /* Apply new theme */
+    if (newTheme) {
+        document.documentElement.setAttribute('data-theme', newTheme);
+    } else {
+        document.documentElement.removeAttribute('data-theme');
+    }
+    
+    /* Save to localStorage */
+    saveThemePreference(newTheme || 'default');
+    
+    /* Update button icon */
+    updateThemeToggleIcon(newTheme);
+}
+
+function loadSavedTheme() {
+    const savedTheme = localStorage.getItem('theme-preference');
+    
+    if (savedTheme && savedTheme === 'red') {
+        document.documentElement.setAttribute('data-theme', 'red');
+        updateThemeToggleIcon('red');
+    } else {
+        updateThemeToggleIcon('default');
+    }
+}
+
+function saveThemePreference(theme) {
+    localStorage.setItem('theme-preference', theme);
+}
+
+function updateThemeToggleIcon(theme) {
+    const themeToggleBtn = document.querySelector(SELECTORS.themeToggleBtn);
+    
+    if (themeToggleBtn) {
+        /* Update button icon based on current theme */
+        if (theme === 'red') {
+            themeToggleBtn.textContent = '🔴'; /* Red theme active */
+        } else {
+            themeToggleBtn.textContent = '🟣'; /* Default theme active */
+        }
+    }
 }
