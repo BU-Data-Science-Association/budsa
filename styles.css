@@ -34,7 +34,7 @@
 
 /* Red/Pink Theme */
 [data-theme="red"] {
-    --primary-color: #EB4847;
+    --primary-color: #eb4747;
     --secondary-color: #F18383;
     --accent-color: #F6B3B3;
     --background-dark: #010101;
@@ -43,8 +43,8 @@
     --card-bg-dark: rgba(60, 56, 56, 0.4);
     --card-bg-light: rgba(127, 119, 119, 0.3);
     --text-primary: #FEFEFE;
-    --text-secondary: #ADA4A4;
-    --text-accent: #D0CACA;
+    --text-secondary: #d7af29;
+    --text-accent: #ccb55b;
     --border-light: rgba(254, 254, 254, 0.1);
     --shadow-primary: rgba(235, 72, 71, 0.3);
     --shadow-secondary: rgba(241, 131, 131, 0.4);
