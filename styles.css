@@ -30,6 +30,7 @@
     --particle-1: rgba(124, 58, 237, 0.4);
     --particle-2: rgba(59, 130, 246, 0.35);
     --navbar-bg: rgba(10, 10, 15, 0.3);
+    --navbar-bg-lw: rgba(10, 10, 15, 0.9)
 }
 
 /* Red/Pink Theme */
@@ -1324,7 +1325,7 @@ body::after {
         top: 100%;
         left: 0;
         width: 100%;
-        background: var(--navbar-bg);
+        background: var(--navbar-bg-lw);
         flex-direction: column;
         padding: 2rem;
         gap: 1rem;
