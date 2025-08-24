@@ -253,7 +253,7 @@ function animateCards(section) {
         setTimeout(() => {
             card.style.transition = `all ${ANIMATION_CONFIG.cardAnimationDuration} ease`;
             card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
+            card.style.transform = '';  // Remove inline transform to allow CSS hover to work
         }, index * ANIMATION_CONFIG.cardStaggerDelay);
     });
 }
