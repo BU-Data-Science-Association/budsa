@@ -2,21 +2,47 @@
 
 ## 1. Project Philosophy & Overview
 
-This document provides a comprehensive technical breakdown of the Boston University Data Science Association (BU-DSA) website. The primary goal of this project is to create a visually stunning, modern, and interactive single-page application (SPA) that serves as the digital hub for the organization.
+This document provides a comprehensive technical breakdown of the Boston University Data Science Association (BU-DSA) website. The primary goal of this project is to create a visually stunning, modern, and interactive website that serves as the digital hub for the organization, featuring advanced event management and user experience.
 
 **Core Tenets:**
-- **Modern Aesthetics:** The design heavily leans into current trends like dark mode, glassmorphism, and fluid animations to feel professional and technologically advanced.
-- **High Performance:** Despite the animation-heavy design, functionality is built with performance in mind, utilizing modern browser APIs like `IntersectionObserver` and `requestAnimationFrame` to ensure a smooth user experience.
+- **Modern Aesthetics:** The design heavily leans into current trends like dark mode, glassmorphism, animated particle backgrounds, and fluid animations to feel professional and technologically advanced.
+- **High Performance:** Despite the animation-heavy design, functionality is built with performance in mind, utilizing modern browser APIs like `IntersectionObserver` and `requestAnimationFrame` to ensure smooth user experience.
 - **Maintainability:** The code is structured in a clear, modular fashion to be easily understood and updated by future e-board members, regardless of their skill level.
+- **Event Management:** Comprehensive system for managing current and past events with dynamic sorting and filtering.
 
 **Technology Stack:**
-- **HTML5:** For structuring the content semantically.
+- **HTML5:** For structuring the content semantically with proper SEO optimization.
 - **CSS3:** For all styling, animations, and responsive design. No CSS frameworks are used, allowing for a bespoke and lightweight design.
 - **Vanilla JavaScript (ES6+):** For all interactivity. No external libraries or frameworks (like jQuery or React) are used, keeping the site fast and dependency-free.
+- **Google Apps Script:** Backend integration for form data collection.
 
 ---
 
-## 2. HTML Structure Analysis (`index.html`)
+## 2. Major Features Update (Version 2.0)
+
+### 2.1. Event Management System
+- **Dynamic Event Sorting**: Events automatically sorted chronologically by date
+- **Smart Filtering**: Category-based filtering (Workshops, Social + Industry, Hackathons)
+- **Upcoming Events Sidebar**: Dynamically populated with next 3 upcoming events
+- **Past Events Page**: Dedicated archive page with copy-paste event management
+- **Date-Aware Updates**: Sidebar automatically updates as events pass their dates
+
+### 2.2. Enhanced User Experience
+- **Theme Toggle**: Switch between default purple/blue and red/pink themes
+- **Mobile Optimization**: Comprehensive responsive design with touch-friendly interface
+- **Background Animations**: Dynamic particle background with CSS animations
+- **Form Integration**: Google Sheets integration for member signups
+- **SEO Optimization**: Complete meta tags, Open Graph, and structured data
+
+### 2.3. Architecture Updates
+- **Past Events Page**: `/pasteventspage/pastevents.html` with dedicated styling
+- **CSS Variables**: Theme system using CSS custom properties
+- **Performance Optimizations**: Efficient animations and lazy loading
+- **Accessibility**: ARIA labels, keyboard navigation, semantic structure
+
+---
+
+## 3. HTML Structure Analysis (`index.html`)
 
 The `index.html` file uses semantic HTML5 tags to provide meaning and structure to the content, which is crucial for accessibility and SEO.
 
@@ -45,7 +71,9 @@ The entire site is a single page, with sections linked by the navigation bar. Th
     1.  An `<h2>` for the section title.
     2.  A `<p>` with a descriptive class (e.g., `.about-description`) for a subtitle or introductory text.
     3.  A container `<div>` (e.g., `.about-cards`, `.events-grid`) that holds the main content. This container is typically a CSS Grid or Flexbox parent.
-  - **Data Attributes:** In the Events section, `data-category` attributes are used on the `.event-card` elements. This is a crucial choice as it allows the JavaScript to filter events without needing to inspect class names or inner text, making the filtering logic clean and robust.
+  - **Data Attributes:** In the Events section, `data-category` and `data-date` attributes are used on the `.event-card` elements. This is a crucial choice as it allows the JavaScript to filter and sort events efficiently:
+    - `data-category`: Used for filtering (workshops, socialandindustry, hackathons)
+    - `data-date`: ISO date format for accurate chronological sorting and upcoming event detection
 
 - **`<footer>`:**
   - **Semantic Choice:** The `<footer>` tag is used for the site-wide footer content.

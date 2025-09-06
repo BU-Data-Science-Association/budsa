@@ -1,5 +1,9 @@
 # 📊 Google Sheets Integration Setup Guide
 
+*Updated for BU-DSA Website Version 2.0*
+
+**Current Status**: ✅ The website form integration is already active and working with Google Sheets. This guide is for reference or setting up new integrations.
+
 ## 🎯 Step 1: Create Your Google Sheet
 
 1. Go to [Google Sheets](https://sheets.google.com)
@@ -67,8 +71,11 @@ function doPost(e) {
 ## 🔧 Step 4: Update Your Website
 
 1. Open `script.js` in your website folder
-2. Find this line: `const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';`
-3. Replace `YOUR_SCRIPT_ID` with your actual script ID from the URL you copied
+2. Find this line in `script.js`:
+   ```javascript
+   const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwH5Gq7nZsudcZfnDjWTU_wW1ttTXZDJqRsQRK622XxqHvg4Wak3jReGdV09pEdbz4X/exec';
+   ```
+3. Replace with your actual script URL if setting up a new integration
 
 ## ✅ Step 5: Test It!
 

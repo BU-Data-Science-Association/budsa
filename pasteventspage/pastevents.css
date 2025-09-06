@@ -1,0 +1,273 @@
+/* ================================ */
+/* PAST EVENTS PAGE SPECIFIC STYLES */
+/* ================================ */
+
+/* Import shared styles */
+@import url('../styles.css');
+
+/* Past events page layout modifications */
+html, body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Ensure the animated background elements work on this page */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+    background: linear-gradient(
+        45deg,
+        var(--overlay-primary) 0%,
+        var(--overlay-secondary) 25%,
+        var(--card-bg-light) 50%,
+        var(--overlay-primary) 75%,
+        var(--background-dark) 100%
+    );
+    background-size: 400% 400%;
+    animation: gradientShift 20s ease infinite;
+    z-index: -10;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 20% 80%, var(--particle-1) 2px, transparent 2px),
+        radial-gradient(circle at 80% 20%, var(--particle-2) 2px, transparent 2px),
+        radial-gradient(circle at 40% 40%, var(--particle-1) 2px, transparent 2px),
+        radial-gradient(circle at 60% 90%, var(--particle-2) 2px, transparent 2px),
+        radial-gradient(circle at 90% 60%, var(--particle-1) 2px, transparent 2px);
+    background-size: 
+        200px 200px,
+        150px 150px,
+        300px 300px,
+        250px 250px,
+        180px 180px;
+    animation: floatParticles 30s linear infinite;
+    z-index: -9;
+    pointer-events: none;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+/* Keyframes for animations */
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes floatParticles {
+    0% { transform: translateY(0px) translateX(0px); }
+    33% { transform: translateY(-20px) translateX(10px); }
+    66% { transform: translateY(-10px) translateX(-15px); }
+    100% { transform: translateY(0px) translateX(0px); }
+}
+
+/* Main content area - flex-grow to push footer to bottom */
+.past-events {
+    padding: 8rem 2rem 5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex: 1;
+}
+
+/* Ensure navbar doesn't interfere with flex layout */
+.navbar {
+    flex-shrink: 0;
+}
+
+/* Ensure footer stays at bottom and covers full width */
+.footer {
+    flex-shrink: 0;
+    margin-top: auto;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.past-events h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.past-events-description {
+    text-align: center;
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* No Events Message */
+.no-events-message {
+    display: none;
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(145deg, var(--card-bg-dark), var(--card-bg-light));
+    border-radius: 20px;
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--border-light);
+    box-shadow: 
+        0 8px 32px var(--background-dark),
+        inset 0 1px 0 var(--border-light),
+        inset 0 -1px 0 var(--background-dark);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.no-events-message h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.no-events-message p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Past Event Cards - Same styling as main events but with subtle differences */
+.past-events .event-card {
+    background: linear-gradient(145deg, var(--card-bg-dark), var(--card-bg-light));
+    border-radius: 20px;
+    padding: 2rem;
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--border-light);
+    box-shadow: 
+        0 8px 32px var(--background-dark),
+        inset 0 1px 0 var(--border-light),
+        inset 0 -1px 0 var(--background-dark);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: hidden;
+    will-change: transform, box-shadow;
+    opacity: 0.8; /* Slightly faded to indicate past events */
+}
+
+.past-events .event-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+    transition: left 0.6s ease;
+}
+
+.past-events .event-card:hover::before {
+    left: 100%;
+}
+
+.past-events .event-card:hover {
+    transform: translateY(-5px) rotateX(5deg) scale(1.02);
+    box-shadow: 
+        0 20px 40px var(--background-dark),
+        0 10px 25px var(--shadow-primary),
+        inset 0 1px 0 var(--border-light),
+        inset 0 -1px 0 var(--background-dark);
+    border-color: var(--shadow-secondary);
+    opacity: 1; /* Full opacity on hover */
+    transition: all 0.2s ease-in-out;
+}
+
+/* Past event card content */
+.past-events .event-card h3 {
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    text-shadow: 0 1px 3px var(--background-dark);
+    font-size: 1.5rem;
+}
+
+.past-events .event-meta {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+}
+
+.past-events .event-description {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* Past event indicator */
+.past-events .event-card::after {
+    content: 'PAST EVENT';
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--shadow-primary);
+    color: var(--text-primary);
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    opacity: 0.7;
+    letter-spacing: 0.5px;
+}
+
+/* Responsive Design for Past Events */
+@media (max-width: 768px) {
+    .past-events h2 {
+        font-size: 2rem;
+    }
+    
+    .past-events-description {
+        font-size: 1rem;
+    }
+    
+    .no-events-message {
+        padding: 3rem 1.5rem;
+    }
+    
+    .no-events-message h3 {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .past-events h2 {
+        font-size: 1.75rem;
+    }
+    
+    .past-events .event-card {
+        padding: 1.5rem;
+    }
+    
+    .past-events .event-card h3 {
+        font-size: 1.25rem;
+    }
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Past Events | BU Data Science Association</title>
+    <meta name="description" content="View past events and workshops from the Boston University Data Science Association (BUDSA).">
+    <meta name="keywords" content="BU Data Science Association, BUDSA, past events, workshops, hackathons, Boston University">
+    <meta name="author" content="Jacky Lin">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://bu-data-science-association.github.io/dsa-website/pasteventspage/">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Past Events | BU Data Science Association">
+    <meta property="og:description" content="View past events and workshops from the Boston University Data Science Association.">
+    <meta property="og:image" content="https://bu-data-science-association.github.io/dsa-website/assets/budsa_logo-modified.png">
+    <meta property="og:url" content="https://bu-data-science-association.github.io/dsa-website/pasteventspage/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="BU Data Science Association">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Favicon and Icons -->
+    <link rel="icon" type="image/png" href="../assets/budsa_logo-modified.png">
+    <link rel="apple-touch-icon" href="../assets/budsa_logo-modified.png">
+    
+    <!-- Performance Optimizations -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" as="style">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="pastevents.css">
+</head>
+<body>
+    <!-- Fixed Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Logo & Brand -->
+            <a href="../index.html" class="logo">
+                <img src="../assets/budsa_logo-modified.png" alt="BU-DSA Logo" class="logo-image" loading="eager">
+                <span class="logo-text">BU-DSA</span>
+            </a>
+            <!-- Navigation Links -->
+            <ul class="nav-menu">
+                <li><a href="../index.html#about" class="nav-link">About</a></li>
+                <li><a href="../index.html#events" class="nav-link">Events</a></li>
+                <li><a href="../index.html#projects" class="nav-link">Projects</a></li>
+                <li><a href="../index.html#team" class="nav-link">Team</a></li>
+                <li><a href="pastevents.html" class="nav-link active">Past Events</a></li>
+                <li><button class="theme-toggle-btn" aria-label="Toggle theme">🟣</button></li>
+                <li><a href="../index.html#join" class="join-btn">Join</a></li>
+            </ul>
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </nav>
+
+
+    <!-- Past Events Section -->
+    <section class="past-events" id="past-events">
+        <h2>Past Events</h2>
+        <p class="past-events-description">Browse through our previous workshops, hackathons, and social events</p>
+        
+        <!-- Filter Buttons -->
+        <div class="event-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="workshops">Workshops</button>
+            <button class="filter-btn" data-filter="socialandindustry">Social + Industry</button>
+            <button class="filter-btn" data-filter="hackathons">Hackathons</button>
+        </div>
+
+        <!-- Past Event Cards Grid -->
+        <div class="events-grid">
+            <!-- PASTE EVENT CARDS HERE: Copy any event card from index.html and paste it below this comment -->
+            <div class="event-card" data-category="socialandindustry" data-date="2025-09-07T12:00:00">
+                <h3>Splash Event</h3>
+                <div class="event-meta">September 7, 2025 • 12:00 PM • Nickerson Feild</div>
+                <p class="event-description">Come meet us at Splash!!!</p>
+            </div>
+            <div class="no-events-message">
+                <h3>No past events yet</h3>
+                <p>Copy event cards from the main page and paste them above this message.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Back to Top Link -->
+            <a href="#home" class="footer-logo">
+                <span class="back-to-top-arrow">🔝</span>
+                Back to Top
+            </a>
+            <!-- Copyright -->
+            <div class="footer-copyright">© 2025 BU-DSA</div>
+            <!-- Footer Links -->
+            <div class="footer-links">
+                <a href="mailto:dsabu@bu.edu">dsabu@bu.edu</a>
+                <a href="#">GitHub</a>
+                <a href="#">Instagram</a>
+                <a href="#">Slack</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../script.js" defer></script>
+    <script src="pastevents.js" defer></script>
+</body>
+</html>

@@ -95,7 +95,12 @@ function closeMobileMenuIfOpen() {
 
 function initEventFiltering() {
     const filterButtons = document.querySelectorAll(SELECTORS.filterButtons);
-    const eventCards = document.querySelectorAll(SELECTORS.eventCards);
+    
+    /* Sort events by date on page load */
+    sortEventsByDate();
+    
+    /* Update upcoming events sidebar */
+    updateUpcomingEventsSidebar();
 
     filterButtons.forEach(button => {
         button.addEventListener('click', function() {
@@ -105,14 +110,8 @@ function initEventFiltering() {
             
             const filterValue = this.getAttribute('data-filter');
             
-            /* Filter and animate event cards */
-            eventCards.forEach(card => {
-                if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
-                    showEventCard(card);
-                } else {
-                    hideEventCard(card);
-                }
-            });
+            /* Filter and sort event cards */
+            filterAndSortEvents(filterValue);
         });
     });
 }
@@ -127,6 +126,114 @@ function showEventCard(card) {
 
 function hideEventCard(card) {
     card.style.display = 'none';
+}
+
+function sortEventsByDate() {
+    const eventsGrid = document.querySelector('.events-grid');
+    const eventCards = Array.from(document.querySelectorAll(SELECTORS.eventCards));
+    
+    /* Sort events by date (chronological order) */
+    eventCards.sort((a, b) => {
+        const dateA = new Date(a.getAttribute('data-date'));
+        const dateB = new Date(b.getAttribute('data-date'));
+        
+        /* Sort by date (earliest first) */
+        return dateA - dateB;
+    });
+    
+    /* Re-append sorted cards to maintain order */
+    eventCards.forEach(card => {
+        eventsGrid.appendChild(card);
+    });
+}
+
+function filterAndSortEvents(filterValue) {
+    const eventCards = document.querySelectorAll(SELECTORS.eventCards);
+    const eventsGrid = document.querySelector('.events-grid');
+    
+    /* First, show/hide cards based on filter */
+    const visibleCards = [];
+    eventCards.forEach(card => {
+        if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+            showEventCard(card);
+            visibleCards.push(card);
+        } else {
+            hideEventCard(card);
+        }
+    });
+    
+    /* Sort visible cards by date */
+    visibleCards.sort((a, b) => {
+        const dateA = new Date(a.getAttribute('data-date'));
+        const dateB = new Date(b.getAttribute('data-date'));
+        
+        /* Sort by date (earliest first) */
+        return dateA - dateB;
+    });
+    
+    /* Re-append sorted visible cards to maintain order */
+    visibleCards.forEach(card => {
+        eventsGrid.appendChild(card);
+    });
+}
+
+function updateUpcomingEventsSidebar() {
+    const eventCards = Array.from(document.querySelectorAll(SELECTORS.eventCards));
+    const upcomingMeetings = document.querySelector('.upcoming-meetings');
+    
+    if (!upcomingMeetings) return;
+    
+    /* Filter for upcoming events only */
+    const now = new Date();
+    const upcomingEvents = eventCards.filter(card => {
+        const eventDate = new Date(card.getAttribute('data-date'));
+        return eventDate >= now;
+    });
+    
+    /* Sort upcoming events by date (earliest first) */
+    const sortedEvents = upcomingEvents.sort((a, b) => {
+        const dateA = new Date(a.getAttribute('data-date'));
+        const dateB = new Date(b.getAttribute('data-date'));
+        
+        /* Sort by date (earliest first) */
+        return dateA - dateB;
+    });
+    
+    /* Get the next 3 upcoming events */
+    const nextEvents = sortedEvents.slice(0, 3);
+    
+    /* Update the sidebar content */
+    const eventItems = upcomingMeetings.querySelectorAll('.event-item');
+    nextEvents.forEach((event, index) => {
+        if (eventItems[index]) {
+            const title = event.querySelector('h3').textContent;
+            const meta = event.querySelector('.event-meta').textContent;
+            const category = event.getAttribute('data-category');
+            
+            /* Format category for display */
+            const categoryDisplay = category === 'socialandindustry' ? 'Social + Industry' : 
+                                  category.charAt(0).toUpperCase() + category.slice(1);
+            
+            /* Update the event item */
+            eventItems[index].querySelector('.event-category').textContent = categoryDisplay;
+            eventItems[index].querySelector('.event-title').textContent = title;
+            eventItems[index].querySelector('.event-date').textContent = meta.split(' • ').slice(0, 2).join(' • ');
+        }
+    });
+    
+    /* Hide unused event items if there are fewer than 3 upcoming events */
+    for (let i = nextEvents.length; i < eventItems.length; i++) {
+        if (eventItems[i]) {
+            eventItems[i].style.display = 'none';
+        }
+    }
+    
+    /* Show event items that are being used */
+    for (let i = 0; i < nextEvents.length; i++) {
+        if (eventItems[i]) {
+            eventItems[i].style.display = 'block';
+        }
+    }
 }
 
 /* ================================ */
@@ -184,7 +291,6 @@ function handleFormSubmission(form) {
     })
     .catch(error => {
         /* Handle errors gracefully */
-        console.error('Submission error:', error);
         alert('Thank you for your interest! We\'ll be in touch soon.');
         form.reset();
     })
@@ -431,3 +537,10 @@ function updateThemeToggleIcon(theme) {
         }
     }
 }
+
+/* ================================ */
+/* END OF MAIN FUNCTIONALITY        */
+/* ================================ */
+
+/* Note: Past events are managed by manually copying HTML from */
+/* the main page to pasteventspage/pastevents.html */
