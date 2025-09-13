@@ -494,7 +494,7 @@ function initThemeToggle() {
 
 function toggleTheme() {
     const currentTheme = document.documentElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'red' ? null : 'red';
+    const newTheme = currentTheme === 'purple' ? null : 'purple';
     
     /* Apply new theme */
     if (newTheme) {
@@ -513,9 +513,9 @@ function toggleTheme() {
 function loadSavedTheme() {
     const savedTheme = localStorage.getItem('theme-preference');
     
-    if (savedTheme && savedTheme === 'red') {
-        document.documentElement.setAttribute('data-theme', 'red');
-        updateThemeToggleIcon('red');
+    if (savedTheme && savedTheme === 'purple') {
+        document.documentElement.setAttribute('data-theme', 'purple');
+        updateThemeToggleIcon('purple');
     } else {
         updateThemeToggleIcon('default');
     }
@@ -530,10 +530,10 @@ function updateThemeToggleIcon(theme) {
     
     if (themeToggleBtn) {
         /* Update button icon based on current theme */
-        if (theme === 'red') {
-            themeToggleBtn.textContent = '🔴'; /* Red theme active */
+        if (theme === 'purple') {
+            themeToggleBtn.textContent = '🟣'; /* Purple theme active */
         } else {
-            themeToggleBtn.textContent = '🟣'; /* Default theme active */
+            themeToggleBtn.textContent = '🔴'; /* Default theme active */
         }
     }
 }
