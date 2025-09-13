@@ -4,7 +4,7 @@ A modern, interactive website for the Boston University Data Science Association
 
 ## 🚀 Live Demo
 
-[https://bu-data-science-association.github.io/dsa-website/]
+[https://bu-data-science-association.github.io/budsa/]
 
 ## ✨ Features
 
