@@ -32,26 +32,26 @@
     
     <!-- Styles -->
     <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="pastevents.css">
+    <link rel="stylesheet" href="archive.css">
 </head>
 <body>
     <!-- Fixed Navigation Bar -->
     <nav class="navbar">
         <div class="nav-container">
             <!-- Logo & Brand -->
-            <a href="../index.html" class="logo">
-                <img src="../assets/budsa_logo-modified.png" alt="BU-DSA Logo" class="logo-image" loading="eager">
+            <a href="../../index.html" class="logo">
+                <img src="../../assets/budsa_logo-modified.png" alt="BU-DSA Logo" class="logo-image" loading="eager">
                 <span class="logo-text">BU-DSA</span>
             </a>
             <!-- Navigation Links -->
             <ul class="nav-menu">
-                <li><a href="../index.html#about" class="nav-link">About</a></li>
-                <li><a href="../index.html#events" class="nav-link">Events</a></li>
-                <li><a href="../index.html#projects" class="nav-link">Projects</a></li>
-                <li><a href="../index.html#team" class="nav-link">Team</a></li>
-                <li><a href="archive/archive.html" class="nav-link active">Archive</a></li>
+                <li><a href="../../index.html#about" class="nav-link">About</a></li>
+                <li><a href="../../index.html#events" class="nav-link">Events</a></li>
+                <li><a href="../../assets/" class="nav-link">Projects</a></li>
+                <li><a href="../../index.html#team" class="nav-link">Team</a></li>
+                <li><a href="../pastevents.html" class="nav-link active">EXIT-ARCHIVE</a></li>
                 <li><button class="theme-toggle-btn" aria-label="Toggle theme">🟣</button></li>
-                <li><a href="../index.html#join" class="join-btn">Join</a></li>
+                <li><a href="../../index.html#join" class="join-btn">Join</a></li>
             </ul>
             <!-- Mobile Menu Toggle -->
             <button class="mobile-menu-btn">☰</button>
@@ -61,55 +61,45 @@
 
     <!-- Past Events Section -->
     <section class="past-events" id="past-events">
-        <h2>Past Events</h2>
-        <p class="past-events-description">Browse through our previous workshops, hackathons, and social events</p>
-        
-        <!-- Filter Buttons -->
-        <div class="event-filters">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="workshops">Workshops</button>
-            <button class="filter-btn" data-filter="socialandindustry">Social + Industry</button>
-            <button class="filter-btn" data-filter="hackathons">Hackathons</button>
-        </div>
-
-        <!-- Past Event Cards Grid -->
-        <div class="events-grid">
-            <!-- PASTE EVENT CARDS HERE: Copy any event card from index.html and paste it below this comment -->
-
-            <div class="event-card" data-category="socialandindustry" data-date="2026-01-25T12:00:00">
-                <h3>Spring Splash Event</h3>
-                <div class="event-meta">January 25, 2025 • 12:00 PM • GSU</div>
-                <p class="event-description">Come meet us at Splash!!!</p>
-            </div>
-            <div class="no-events-message">
-                <h3>No past events yet</h3>
-                <p>Copy event cards from the main page and paste them above this message.</p>
+        <div class="past-events-content">
+            <h2>PAST YEARS</h2>
+            <p class="past-events-description">Check Out Our Past Events</p>
+            
+            <!-- Centered Card -->
+            <div class="archive-card">
+                <h3>Select a Year</h3>
+                <ul class="archive-list">
+                    <li><a href="../Fall 2025/pasteventsFall2025.html">Fall 2025</a></li>
+                    <!-- <li><a href="./Spring 2025/pasteventsSspring2025.html">Spring 2025</a></li>
+                    <li><a href="./Fall 2024/pasteventsFall2024.html">Fall 2024</a></li>
+                    <li><a href="./Spring 2024/pasteventsSspring2024.html">Spring 2024</a></li> -->
+                </ul>
             </div>
         </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-container">
-            <!-- Back to Top Link -->
-            <a href="#home" class="footer-logo">
-                <span class="back-to-top-arrow">🔝</span>
-                Back to Top
-            </a>
-            <!-- Copyright -->
-            <div class="footer-copyright">© 2026 BU-DSA</div>
-            <!-- Footer Links -->
-            <div class="footer-links">
-                <a href="mailto:dsabu@bu.edu">dsabu@bu.edu</a>
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-container">
+                <!-- Back to Top Link -->
+                <a href="#home" class="footer-logo">
+                    <span class="back-to-top-arrow">🔝</span>
+                    Back to Top
+                </a>
+                <!-- Copyright -->
+                <div class="footer-copyright">© 2026 BU-DSA</div>
+                <!-- Footer Links -->
+                <div class="footer-links">
+                    <a href="mailto:dsabu@bu.edu">dsabu@bu.edu</a>
                 <a href="https://github.com/BU-Data-Science-Association" target="_blank" rel="noopener">GitHub</a>
                 <a href="https://www.instagram.com/bu_dsa/" target="_blank" rel="noopener">Instagram</a>
                 <a href="https://join.slack.com/t/bostonudsa/shared_invite/zt-3ocrmm9zb-6jIIzgm1BY7YNdP5AZN82A" target="_blank" rel="noopener">Slack</a>
+                </div>
             </div>
-        </div>
-    </footer>
+        </footer>
+    </section>
 
     <!-- JavaScript -->
-    <script src="../script.js" defer></script>
-    <script src="pastevents.js" defer></script>
+    <script src="../../script.js" defer></script>
+    <script src="../pastevents.js" defer></script>
 </body>
 </html>

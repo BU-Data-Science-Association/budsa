@@ -1,0 +1,195 @@
+/* ================================ */
+/* ARCHIVE PAGE STYLES */
+/* ================================ */
+
+/* Import shared styles */
+@import url('../../styles.css');
+
+/* Archive page layout modifications */
+html, body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Animated background */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+    background: linear-gradient(
+        45deg,
+        var(--overlay-primary) 0%,
+        var(--overlay-secondary) 25%,
+        var(--card-bg-light) 50%,
+        var(--overlay-primary) 75%,
+        var(--background-dark) 100%
+    );
+    background-size: 400% 400%;
+    animation: gradientShift 20s ease infinite;
+    z-index: -10;
+    pointer-events: none;
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 20% 80%, var(--particle-1) 2px, transparent 2px),
+        radial-gradient(circle at 80% 20%, var(--particle-2) 2px, transparent 2px),
+        radial-gradient(circle at 40% 40%, var(--particle-1) 2px, transparent 2px),
+        radial-gradient(circle at 60% 90%, var(--particle-2) 2px, transparent 2px),
+        radial-gradient(circle at 90% 60%, var(--particle-1) 2px, transparent 2px);
+    background-size: 
+        200px 200px,
+        150px 150px,
+        300px 300px,
+        250px 250px,
+        180px 180px;
+    animation: floatParticles 30s linear infinite;
+    z-index: -9;
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes floatParticles {
+    0% { transform: translateY(0px) translateX(0px); }
+    33% { transform: translateY(-20px) translateX(10px); }
+    66% { transform: translateY(-10px) translateX(-15px); }
+    100% { transform: translateY(0px) translateX(0px); }
+}
+
+/* Main content */
+.navbar {
+    flex-shrink: 0;
+}
+
+.past-events {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* padding: 0rem; */
+}
+
+.past-events h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    text-align: center;
+    /* margin-bottom: 1rem; */
+    color: var(--text-primary);
+    padding: 32px;
+}
+
+.past-events-description {
+    text-align: center;
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+}
+
+/* Archive Card */
+.archive-card {
+    background: linear-gradient(145deg, var(--card-bg-dark), var(--card-bg-light));
+    border-radius: 20px;
+    padding: 3rem;
+    max-width: 500px;
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--border-light);
+    box-shadow: 
+        0 8px 32px var(--background-dark),
+        inset 0 1px 0 var(--border-light),
+        inset 0 -1px 0 var(--background-dark);
+    text-align: center;
+}
+
+.archive-card h3 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 2rem 0;
+}
+
+.archive-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.archive-list li {
+    margin: 0.75rem 0;
+}
+
+.archive-list a {
+    display: block;
+    padding: 1rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-light);
+}
+
+.archive-list a:hover {
+    background: linear-gradient(145deg, var(--overlay-primary), var(--overlay-secondary));
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px var(--shadow-primary);
+    border-color: var(--shadow-secondary);
+}
+
+/* Footer */
+.footer {
+    flex-shrink: 0;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    /* background: var(--background-dark); */
+    margin-top: auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .past-events h2 {
+        font-size: 2rem;
+    }
+    
+    .archive-card {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .past-events h2 {
+        font-size: 1.5rem;
+    }
+    
+    .archive-card {
+        padding: 1.5rem;
+        max-width: 90%;
+    }
+}
