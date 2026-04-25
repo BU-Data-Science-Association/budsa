@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Past Events | BU Data Science Association</title>
+    <meta name="description" content="View past events and workshops from the Boston University Data Science Association (BUDSA).">
+    <meta name="keywords" content="BU Data Science Association, BUDSA, past events, workshops, hackathons, Boston University">
+    <meta name="author" content="Jacky Lin">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://bu-data-science-association.github.io/dsa-website/pasteventspage/">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Past Events | BU Data Science Association">
+    <meta property="og:description" content="View past events and workshops from the Boston University Data Science Association.">
+    <meta property="og:image" content="https://bu-data-science-association.github.io/dsa-website/assets/budsa_logo-modified.png">
+    <meta property="og:url" content="https://bu-data-science-association.github.io/dsa-website/pasteventspage/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="BU Data Science Association">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Favicon and Icons -->
+    <link rel="icon" type="image/png" href="../assets/budsa_logo-modified.png">
+    <link rel="apple-touch-icon" href="../assets/budsa_logo-modified.png">
+    
+    <!-- Performance Optimizations -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" as="style">
+    
+    <!-- Styles -->
+    <!-- <link rel="stylesheet" href="../../styles.css"> -->
+    <link rel="stylesheet" href="../pastevents.css">
+</head>
+<body>
+    <!-- Fixed Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Logo & Brand -->
+            <a href="../../index.html" class="logo">
+                <img src="../../assets/budsa_logo-modified.png" alt="BU-DSA Logo" class="logo-image" loading="eager">
+                <span class="logo-text">BU-DSA</span>
+            </a>
+            <!-- Navigation Links -->
+            <ul class="nav-menu">
+                <li><a href="../../index.html#about" class="nav-link">About</a></li>
+                <li><a href="../../index.html#events" class="nav-link">Events</a></li>
+                <li><a href="../../index.html#projects" class="nav-link">Projects</a></li>
+                <li><a href="../../index.html#team" class="nav-link">Team</a></li>
+                <li><a href="../pastevents.html" class="nav-link active">Exit</a></li>
+                <li><button class="theme-toggle-btn" aria-label="Toggle theme">🟣</button></li>
+                <li><a href="../../index.html#join" class="join-btn">Join</a></li>
+            </ul>
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </nav>
+
+
+    <!-- Past Events Section -->
+    <section class="past-events" id="past-events">
+        <h2>BUDSA SPRING 2026 Past Events</h2>
+        <p class="past-events-description">Browse through our previous workshops, hackathons, and social events</p>
+        
+        <!-- Filter Buttons -->
+        <div class="event-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="workshops">Workshops</button>
+            <button class="filter-btn" data-filter="socialandindustry">Social + Industry</button>
+            <button class="filter-btn" data-filter="hackathons">Hackathons</button>
+        </div>
+
+        <!-- Past Event Cards Grid -->
+        <div class="events-grid">
+            <!-- PASTE EVENT CARDS HERE: Copy any event card from index.html and paste it below this comment -->
+            <div class="event-card" data-category="socialandindustry" data-date="2026-01-25T12:00:00">
+                <h3>Spring Splash Event</h3>
+                <div class="event-meta">January 25, 2026 • 12:00 PM • GSU</div>
+                <p class="event-description">Come meet us at Splash!!!</p>
+            </div>
+
+            <div class="event-card" data-category="socialandindustry" data-date="2026-01-28T19:00:00">
+                <h3>General Info Meeting</h3>
+                <div class="event-meta">January 28, 2026 • 7:00 PM • CDS 164</div>
+                <p class="event-description">Join us for our general info meeting to learn about BUDSA, upcoming events, and how to get involved with our community!</p>
+            </div>
+
+            <div class="event-card" data-category="hackathons" data-date="2026-02-04T19:00:00">
+                <h3>Apply-a-thon</h3>
+                <div class="event-meta">February 4, 2026 • 7:00 PM • CDS 164</div>
+                <p class="event-description">Join us for an apply-a-thon where we help each other with internship and job applications. Bring your resume and let's land those opportunities together!</p>
+            </div>
+
+            <div class="event-card" data-category="socialandindustry" data-date="2026-02-05T19:00:00">
+                <h3>NYC Trip Info Session</h3>
+                <div class="event-meta"> Date: TBD • Time: TBD• CDS 164</div>
+                <p class="event-description">Join us for an info session about our upcoming NYC trip. Learn about the itinerary, logistics, and what to expect!</p>
+            </div>
+
+            <div class="event-card" data-category="workshops" data-date="2026-02-11T19:00:00">
+                <h3>Git Workshop</h3>
+                <div class="event-meta">February 11, 2026 • 7:00 PM • CDS 164</div>
+                <p class="event-description">Learn Git version control fundamentals. Master branching, merging, and collaboration workflows essential for any developer.</p>
+            </div>
+
+            <div class="event-card" data-category="socialandindustry" data-date="2026-02-18T19:00:00">
+                <h3>Sam Schifman: AI in Healthcare</h3>
+                <div class="event-meta">February 18, 2026 • 7:00 PM • CDS 164</div>
+                <p class="event-description">Hear from industry expert Sam Schifman about the applications and impact of AI in the healthcare industry.</p>
+            </div>
+
+            <div class="event-card" data-category="workshops" data-date="2026-02-25T19:00:00">
+                <h3>Intro to Neural Networks</h3>
+                <div class="event-meta">February 25, 2026 • 7:00 PM • CDS 164</div>
+                <p class="event-description">Learn the fundamentals of neural networks with Dhiraj. Explore how deep learning models work and their real-world applications.</p>
+            </div>
+
+            <div class="event-card" data-category="workshops" data-date="2026-03-04T19:00:00">
+                <h3>Fortran: Punch Card Programming</h3>
+                <div class="event-meta">March 4, 2026 • 7:00 PM • CDS 164</div>
+                <p class="event-description">Dive into computing history! Learn Fortran and discover how programmers used punch cards in the era of mainframe computing.</p>
+            </div>
+
+            <div class="event-card" data-category="socialandindustry" data-date="2026-03-25T19:00:00">
+                <h3>Data Security and Privacy</h3>
+                <div class="event-meta">March 18, 2026 • 7:00 PM • CDS 164</div>
+                <p class="event-description">Join us for a session on data security and privacy best practices with Professor Varia!</p>
+            </div>
+
+            <div class="event-card" data-category="hackathons" data-date="2026-03-28T19:00:00">
+                <h3>HackHardware Workshop</h3>
+                <div class="event-meta">March 28, 2026 • 7:00 PM • CDS 164</div>
+                <p class="event-description">Get hands-on experience with hardware hacking. Build and tinker with electronics and embedded systems!</p>
+            </div>
+            
+            <div class="event-card" data-category="socialandindustry" data-date="2026-03-25T19:00:00">
+                <h3>Industry + Alumni Panel</h3>
+                <div class="event-meta">March 25, 2026 • 7:00 PM • CDS 164</div>
+                <p class="event-description">Connect with BUDSA alumni and industry professionals. Hear their career paths, get advice, and network with experienced professionals.</p>
+            </div>
+
+            <div class="event-card" data-category="socialandindustry" data-date="2026-03-28T19:00:00">
+                <h3>NYC Trip: School of Data Un-Conference</h3>
+                <div class="event-meta">March 28, 2026 • 7:00 PM • Various</div>
+                <p class="event-description">Join us on a trip to NYC for the School of Data Un-Conference! Network with data professionals and explore the data science community.</p>
+            </div>
+
+            <div class="event-card" data-category="workshops" data-date="2026-04-01T19:00:00">
+                <h3>Data Science for Political Science</h3>
+                <div class="event-meta">April 1, 2026 • 7:00 PM • CDS 164</div>
+                <p class="event-description">Explore how data science applies to political analysis with Sam. Learn about voting patterns, polling, and political data analysis.</p>
+            </div>
+
+            <div class="event-card" data-category="workshops" data-date="2026-04-08T19:00:00">
+                <h3>Data Science for Business</h3>
+                <div class="event-meta">April 8, 2026 • 7:00 PM • CDS 164</div>
+                <p class="event-description">Discover how data science drives business decisions with Amanda. Learn about analytics, forecasting, and business intelligence.</p>
+            </div>
+
+            <div class="event-card" data-category="workshops" data-date="2026-04-15T19:00:00">
+                <h3>GANs (Generative Adversarial Networks)</h3>
+                <div class="event-meta">April 15, 2026 • 7:00 PM • CDS 164</div>
+                <p class="event-description">Dive deep into GANs with Jacky! Learn how generative models work and explore cutting-edge applications in AI.</p>
+            </div>
+
+            <div class="event-card" data-category="socialandindustry" data-date="2026-04-22T19:00:00">
+                <h3>TBD Placeholder Event</h3>
+                <div class="event-meta">April 22, 2026 • 7:00 PM • CDS 164</div>
+                <p class="event-description">Details coming soon! Stay tuned for an exciting event.</p>
+            </div>
+
+            <!-- If no past events are present, show this message -->
+            <div class="no-events-message">
+                <h3>No past events yet</h3>
+                <p>Copy event cards from the main page and paste them above this message.</p>
+            </div>            
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Back to Top Link -->
+            <a href="#past-events" class="footer-logo">
+                <span class="back-to-top-arrow">🔝Back to Top</span>
+            </a>
+            <!-- Copyright -->
+            <div class="footer-copyright">© 2026 BU-DSA</div>
+            <!-- Footer Links -->
+            <div class="footer-links">
+                <a href="mailto:dsabu@bu.edu">dsabu@bu.edu</a>
+                <a href="https://github.com/BU-Data-Science-Association" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://www.instagram.com/bu_dsa/" target="_blank" rel="noopener">Instagram</a>
+                <a href="https://join.slack.com/t/bostonudsa/shared_invite/zt-3ocrmm9zb-6jIIzgm1BY7YNdP5AZN82A" target="_blank" rel="noopener">Slack</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../../script.js" defer></script>
+    <script src="../pastevents.js" defer></script>
+</body>
+</html>
